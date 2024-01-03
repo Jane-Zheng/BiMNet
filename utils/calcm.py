@@ -4,7 +4,7 @@ import datetime
 import os
 import pandas as pd
 import numpy as np
-from config import AttConfig
+from stepla_config import StepLAConfig
 
 def read_cm(path):
     cm = pd.read_csv(path, header=0, index_col=0)
@@ -41,13 +41,12 @@ def build_quota(cm):
 if __name__ == '__main__':
     # configs = DefaultConfig()
     # os.environ["CUDA_VISIBLE_DEVICES"] = "3" 
-    configs = AttConfig() 
-    # configs =  # 记得改
+    configs = StepLAConfig() 
     tm = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')
-    path1 = '/home/zhengjiaying/py_code/LSTM-ccc/checkpoints/701lstmlwfatt/BiLstmAttention2022-07-01-23-29cm.csv'  # 9, 10
-    path2 = '/home/zhengjiaying/py_code/LSTM-ccc/checkpoints/701lstmlwfatt/BiLstmAttention2022-07-02-00-17cm.csv'  # 7, 8
-    path3 = '/home/zhengjiaying/py_code/LSTM-ccc/checkpoints/701lstmlwfatt/BiLstmAttention2022-07-02-08-49cm.csv'  # 1, 2, 3
-    path4 = '/home/zhengjiaying/py_code/LSTM-ccc/checkpoints/701lstmlwfatt/BiLstmAttention2022-07-02-13-53cm.csv'  # 567
+    path1 = './checkpoints/701lstmlwfatt/BiLstmAttention2022-07-01-23-29cm.csv'  # 9th, 10th fold's Confusion matrix
+    path2 = './checkpoints/701lstmlwfatt/BiLstmAttention2022-07-02-00-17cm.csv'  # 7, 8
+    path3 = './checkpoints/701lstmlwfatt/BiLstmAttention2022-07-02-08-49cm.csv'  # 1, 2, 3
+    path4 = './checkpoints/701lstmlwfatt/BiLstmAttention2022-07-02-13-53cm.csv'  # 5,6,7
     cm1 = read_cm(path1)    #
     cm2 = read_cm(path2)     # 
     cm3 = read_cm(path3)
