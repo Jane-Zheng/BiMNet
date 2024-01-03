@@ -1,6 +1,6 @@
 # --coding='utf-8'-- #
 # data ver2
-# 三模态数据集（动作识别：NDI\DG\PS 三类数据 9分类任务）
+# 三模态数据集（动作识别：NDI\DG\PS 三类数据 分类任务）
 from distutils.command.config import config
 import pickle
 from scipy.fftpack import fft, ifft
@@ -81,21 +81,20 @@ class CSSDataset(dataset.Dataset):
         label = None
 
         data = self.data  # train or test data's name list or a
-        if self.data_name == '/home/zhengjiaying/py_code/LSTM-ccc/standcccdata2/css_dataset_stand_series.pkl':
-        # if self.data_name == '/home/zhengjiaying/py_code/LSTM-ccc/stand_data/css_dataset_stand_series.pkl':
-        # if self.data_name == '/home/zhengjiaying/py_code/LSTM-ccc/stand_data/css_dataset_stand_series.pkl':
-            # /home/zhengjiaying/py_code/LSTM-ccc/scaled_data/css_dataset_scale_series.pkl
-            # /home/zhengjiaying/py_code/LSTM-ccc/stand_data/css_dataset_stand_series.pkl
+        if self.data_name == './standcccdata2/css_dataset_stand_series.pkl':
+        # if self.data_name == './stand_data/css_dataset_stand_series.pkl':
+        # if self.data_name == './stand_data/css_dataset_stand_series.pkl':
+           
             # data is a list of  series data's filename
             sample_name = data[item][0]
             # paths
-            ndi_path = '/home/zhengjiaying/py_code/LSTM-ccc/standcccdata2/series_datas/datas'
+            ndi_path = './standcccdata2/series_datas/datas'
             ndi_path = os.path.join(ndi_path, self.split_type, 'NDI')
-            ps_path = '/home/zhengjiaying/py_code/LSTM-ccc/standcccdata2/series_datas/datas'
+            ps_path = './standcccdata2/series_datas/datas'
             ps_path = os.path.join(ps_path, self.split_type, 'PS')
-            dg_path = '/home/zhengjiaying/py_code/LSTM-ccc/standcccdata2/series_datas/datas'
+            dg_path = './standcccdata2/series_datas/datas'
             dg_path = os.path.join(dg_path, self.split_type, 'DG')
-            label_path = '/home/zhengjiaying/py_code/LSTM-ccc/standcccdata2/series_datas/labels'
+            label_path = './standcccdata2/series_datas/labels'
             label_path = os.path.join(label_path, self.split_type)
 
             # get data
