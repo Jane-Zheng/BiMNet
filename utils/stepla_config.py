@@ -9,7 +9,7 @@ class StepLAConfig:
     model_name = 'BMASNModel'  # model name
     data_root = '.\\dataset.py'  # path of data 
     log_dir = '.\\logging'
-    data_name = r'/home/zhengjiaying/py_code/LSTM-ccc/standcccdata2/css_dataset_stand_series.pkl'
+    data_name = r'./standcccdata2/css_dataset_stand_series.pkl'
     # output_dir = '.\\checkpoints'
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     # device_id = [2]
